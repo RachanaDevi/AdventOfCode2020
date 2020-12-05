@@ -36,7 +36,7 @@ public class Day01ReportRepairUnitTest {
 
     @Test
     public void shouldFindTwoNumbersGivenNumbersFromAnInputFile() throws IOException {
-        var numbers = new ArrayList<>(Files.readAllLines(Paths.get("src/test/resources/input.txt")));
+        var numbers = new ArrayList<>(Files.readAllLines(Paths.get("src/test/resources/day1_sum_2020.txt")));
         var intNumbers = numbers.stream().map(Integer::parseInt).collect(Collectors.toList());
         assertThat(Day01ReportRepair.findTwoNumbersProductWhoseSumIs2020(intNumbers), is(1006875));
     }
@@ -65,7 +65,7 @@ public class Day01ReportRepairUnitTest {
 
     @Test
     public void shouldFindThreeNumbersGivenNumbersFromAnInputFile() throws IOException {
-        var numbers = new ArrayList<>(Files.readAllLines(Paths.get("src/test/resources/input.txt")));
+        var numbers = new ArrayList<>(Files.readAllLines(Paths.get("src/test/resources/day1_sum_2020.txt")));
         var intNumbers = numbers.stream().map(Integer::parseInt).collect(Collectors.toList());
         assertThat(Day01ReportRepair.findThreeNumbersProductWhoseSumIs2020(intNumbers), is(165026160));
     }
