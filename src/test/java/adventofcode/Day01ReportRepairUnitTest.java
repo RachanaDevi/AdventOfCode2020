@@ -14,7 +14,7 @@ import static org.hamcrest.core.Is.is;
 public class Day01ReportRepairUnitTest {
 
     @Test
-    public void shouldFindTwoNumberResultingIn2020() {
+    public void shouldFindTwoNumberProductGivenListHasOnlyTwoNumber() {
         var numbers = new ArrayList<Integer>();
         numbers.add(1010);
         numbers.add(1010);
@@ -22,7 +22,7 @@ public class Day01ReportRepairUnitTest {
     }
 
     @Test
-    public void shouldShowCorrectAnswerFromAListOfNumbers() {
+    public void shouldFindTwoNumbersProductGivenAListOfNumbers() {
         var numbers = new ArrayList<Integer>();
         numbers.add(10);
         numbers.add(189);
@@ -35,9 +35,38 @@ public class Day01ReportRepairUnitTest {
     }
 
     @Test
-    public void shouldShowCorrectAnswerFromAnInputFile() throws IOException {
+    public void shouldFindTwoNumbersGivenNumbersFromAnInputFile() throws IOException {
         var numbers = new ArrayList<>(Files.readAllLines(Paths.get("src/test/resources/input.txt")));
         var intNumbers = numbers.stream().map(Integer::parseInt).collect(Collectors.toList());
         assertThat(Day01ReportRepair.findTwoNumbersProductWhoseSumIs2020(intNumbers), is(1006875));
+    }
+
+    @Test
+    public void shouldFindThreeNumberProductGivenListHasOnlyTwoNumber() {
+        var numbers = new ArrayList<Integer>();
+        numbers.add(1000);
+        numbers.add(1010);
+        numbers.add(10);
+        assertThat(Day01ReportRepair.findThreeNumbersProductWhoseSumIs2020(numbers), is(10100000));
+    }
+
+    @Test
+    public void shouldFindThreeNumbersProductGivenAListOfNumbers() {
+        var numbers = new ArrayList<Integer>();
+        numbers.add(100);
+        numbers.add(20);
+        numbers.add(1900);
+        numbers.add(1831);
+        numbers.add(260);
+        numbers.add(260);
+        numbers.add(260);
+        assertThat(Day01ReportRepair.findThreeNumbersProductWhoseSumIs2020(numbers), is(3800000));
+    }
+
+    @Test
+    public void shouldFindThreeNumbersGivenNumbersFromAnInputFile() throws IOException {
+        var numbers = new ArrayList<>(Files.readAllLines(Paths.get("src/test/resources/input.txt")));
+        var intNumbers = numbers.stream().map(Integer::parseInt).collect(Collectors.toList());
+        assertThat(Day01ReportRepair.findThreeNumbersProductWhoseSumIs2020(intNumbers), is(165026160));
     }
 }
