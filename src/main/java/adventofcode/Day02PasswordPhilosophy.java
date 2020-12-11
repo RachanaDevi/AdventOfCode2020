@@ -15,7 +15,6 @@ public class Day02PasswordPhilosophy {
         for (int i = 0; i < password.length(); i++) {
             if (password.charAt(i) == appliedAlphabet) {
                 count++;
-                System.out.println(count);
                 if (count > upperLimit) return false;
             }
         }

@@ -2,6 +2,10 @@ package adventofcode;
 
 import org.junit.Test;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 import static adventofcode.Day02PasswordPhilosophy.correctPasswords;
@@ -22,5 +26,14 @@ public class Day02PasswordPhilosophyUnitTest {
         var passwordRules = List.of("3-4 t: dttt", "3-4 h: vhh");
 
         assertThat(correctPasswords(passwordRules), is(1));
+    }
+
+    @Test
+    public void shouldPassPasswordConditionsGivenManyPasswordRulesFromAFile() throws IOException {
+        var passwordRules = new ArrayList<>(Files
+                .readAllLines(Paths
+                        .get("src/test/resources/day2_password_philosophy.txt")));
+
+        assertThat(correctPasswords(passwordRules), is(586));
     }
 }
