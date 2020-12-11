@@ -2,7 +2,7 @@ package adventofcode;
 
 import java.util.List;
 
-public class Day02PasswordPhilosophy {
+public class Day02Part1PasswordPhilosophy {
 
     public static boolean satisfiesPassword(String rule) {
         var inputOutputSplit = rule.split(":");
@@ -22,6 +22,6 @@ public class Day02PasswordPhilosophy {
     }
 
     public static int correctPasswords(List<String> passwordRules) {
-        return (int) passwordRules.stream().filter(Day02PasswordPhilosophy::satisfiesPassword).count();
+        return (int) passwordRules.stream().filter(Day02Part1PasswordPhilosophy::satisfiesPassword).count();
     }
 }

@@ -8,12 +8,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import static adventofcode.Day02PasswordPhilosophy.correctPasswords;
-import static adventofcode.Day02PasswordPhilosophy.satisfiesPassword;
+import static adventofcode.Day02Part1PasswordPhilosophy.correctPasswords;
+import static adventofcode.Day02Part1PasswordPhilosophy.satisfiesPassword;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class Day02PasswordPhilosophyUnitTest {
+public class Day02Part1PasswordPhilosophyUnitTest {
     @Test
     public void shouldPassPasswordConditionsGivenSingleInput() {
         var rule = "3-4 t: dtttt";
