@@ -9,16 +9,17 @@ public class Day03Part1TobogganTrajectory {
 
     public static Integer calculateTrees(String[][] tobogganPath) {
         int totalTrees = 0;
-        for (int col = colIncrement; ; ) {
-            for (int row = rowIncrement; ; row += rowIncrement) {
-                if (tobogganPath[row][col].equals(TREE)) {
-                    totalTrees++;
-                }
-                if (row == rowLength(tobogganPath) - 1) {
-                    return totalTrees;
-                }
-                col = (col + colIncrement) % colLength(tobogganPath);
+        int col = colIncrement;
+        int row = rowIncrement;
+        while (true) {
+            if (tobogganPath[row][col].equals(TREE)) {
+                totalTrees++;
             }
+            if (row == rowLength(tobogganPath) - 1) {
+                return totalTrees;
+            }
+            col = (col + colIncrement) % colLength(tobogganPath);
+            row += rowIncrement;
         }
     }
 
