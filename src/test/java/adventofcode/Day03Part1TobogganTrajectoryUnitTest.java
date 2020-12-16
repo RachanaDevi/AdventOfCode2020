@@ -58,6 +58,16 @@ public class Day03Part1TobogganTrajectoryUnitTest {
         assertThat(calculateTrees(tobogganPath), is(7));
     }
 
+    @Test
+    public void shouldEncounter151TreesGivenTobogganPathFromInputFile() throws IOException {
+        var tobogganPathArrayList = new ArrayList(Files
+                .readAllLines(Paths
+                        .get("src/test/resources/day3_toboggan_trajectory.txt")));
+
+        var tobogganPath = createTobogganPathFrom(tobogganPathArrayList);
+        assertThat(calculateTrees(tobogganPath), is(151));
+    }
+
     private String[][] createTobogganPathFrom(ArrayList<String> rowTobogganPath) {
         var allRows = rowTobogganPath.toArray(new String[rowTobogganPath.size()]);
         String[][] finalArray = new String[allRows.length][allRows[0].length()];
