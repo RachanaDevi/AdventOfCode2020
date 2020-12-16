@@ -18,4 +18,28 @@ public class Day03Part1TobogganTrajectoryUnitTest {
 
         assertThat(calculateTrees(tobogganPath), is(1));
     }
+
+    @Test
+    public void shouldEncounter1TreeAndLoopOverTheTobogganPathGivenThePathIs3x4() {
+        String[][] tobogganPath = {
+                {SQUARE, SQUARE, SQUARE, SQUARE},
+                {SQUARE, SQUARE, SQUARE, SQUARE},
+                {SQUARE, SQUARE, TREE, SQUARE},
+        };
+
+        assertThat(calculateTrees(tobogganPath), is(1));
+    }
+
+
+    @Test
+    public void shouldEncounter3TreesAndLoopOverTheTobogganPathGivenThePathIs4x4() {
+        String[][] tobogganPath = {
+                {SQUARE, SQUARE, SQUARE, SQUARE},
+                {SQUARE, SQUARE, SQUARE, TREE},
+                {SQUARE, SQUARE, TREE, SQUARE},
+                {SQUARE, TREE, SQUARE, SQUARE},
+        };
+
+        assertThat(calculateTrees(tobogganPath), is(3));
+    }
 }

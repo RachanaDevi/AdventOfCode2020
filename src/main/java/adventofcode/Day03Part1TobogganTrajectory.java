@@ -6,14 +6,20 @@ public class Day03Part1TobogganTrajectory {
     static final String SQUARE = ".";
     private static final int rowIncrement = 1;
     private static final int colIncrement = 3;
-    
+
     public static Integer calculateTrees(String[][] tobogganPath) {
-        for (int col = colIncrement; col < colLength(tobogganPath); col += colIncrement) {
-            for (int row = rowIncrement; row < rowLength(tobogganPath); row += rowIncrement) {
-                return tobogganPath[row][col].equals(TREE) ? 1 : 0;
+        int totalTrees = 0;
+        for (int col = colIncrement; ; ) {
+            for (int row = rowIncrement; ; row += rowIncrement) {
+                if (tobogganPath[row][col].equals(TREE)) {
+                    totalTrees++;
+                }
+                if (row == rowLength(tobogganPath) - 1) {
+                    return totalTrees;
+                }
+                col = (col + colIncrement) % colLength(tobogganPath);
             }
         }
-        return null;
     }
 
     private static Integer rowLength(String[][] twoDimensionalArray) {
