@@ -2,7 +2,7 @@ package adventofcode.utilities;
 
 import org.junit.Test;
 
-import static adventofcode.utilities.Day04Part2PassportProcessingValidatingFields.validateField;
+import static adventofcode.utilities.Day04Part2PassportProcessingValidatingFields.isValidPassportField;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
@@ -11,30 +11,30 @@ public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
     @Test
     public void shouldReturnFalseIfBirthYearIsLessThan1921() {
         var invalidBirthYear = "byr:1920";
-        assertThat(validateField(invalidBirthYear), is(false));
+        assertThat(isValidPassportField(invalidBirthYear), is(false));
     }
 
     @Test
     public void shouldReturnFalseIfBirthYearIsMoreThan2002() {
         var invalidBirthYear = "byr:2003";
-        assertThat(validateField(invalidBirthYear), is(false));
+        assertThat(isValidPassportField(invalidBirthYear), is(false));
     }
 
     @Test
     public void shouldReturnTrueIfBirthYearIsBetween1920And2002() {
         var birthYear = "byr:1961";
-        assertThat(validateField(birthYear), is(true));
+        assertThat(isValidPassportField(birthYear), is(true));
     }
 
     @Test
     public void shouldReturnTrueIfIssueYearIsBetween2010And2020() {
-        var invalidBirthYear = "iyr:2015";
-        assertThat(validateField(invalidBirthYear), is(true));
+        var issueYear = "iyr:2015";
+        assertThat(isValidPassportField(issueYear), is(true));
     }
 
     @Test
     public void shouldReturnFalseIfExpirationYearIsBetween2021And2030() {
-        var invalidBirthYear = "eyr:2020";
-        assertThat(validateField(invalidBirthYear), is(false));
+        var expirationYear = "eyr:2020";
+        assertThat(isValidPassportField(expirationYear), is(false));
     }
 }

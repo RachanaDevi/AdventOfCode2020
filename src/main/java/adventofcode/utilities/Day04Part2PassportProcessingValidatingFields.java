@@ -4,7 +4,7 @@ public class Day04Part2PassportProcessingValidatingFields {
 
     private static final String COLON_SEPARATOR = ":";
 
-    public static boolean validateField(String passportField) {
+    public static boolean isValidPassportField(String passportField) {
 
         String fieldKey = passportField.substring(0, passportField.indexOf(COLON_SEPARATOR));
         String fieldValue = passportField.substring(passportField.indexOf(COLON_SEPARATOR) + 1);
