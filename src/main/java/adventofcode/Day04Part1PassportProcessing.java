@@ -5,7 +5,7 @@ public class Day04Part1PassportProcessing {
     public static Integer validPassports(String[] passports) {
         var count = 0;
         for (String passport : passports) {
-            if (areValidFieldsPresent(passport)) {
+            if (hasValidPassportFields(passport)) {
                 count++;
             }
         }
@@ -13,7 +13,7 @@ public class Day04Part1PassportProcessing {
     }
 
 
-    static boolean areValidFieldsPresent(String passport) {
+    static boolean hasValidPassportFields(String passport) {
         String[] passportRequiredFields = {"ecl",
                 "pid",
                 "eyr",
@@ -22,7 +22,7 @@ public class Day04Part1PassportProcessing {
                 "iyr",
                 "hgt"};
         for (String passportRequiredField : passportRequiredFields) {
-            if (!passport.matches(".*(\s|^)" + passportRequiredField + "(\s|$).*")) {
+            if (!passport.matches(".*(\s|^)" + passportRequiredField + ":.*(\s|$).*")) {
                 return false;
             }
         }
