@@ -23,7 +23,7 @@ public class Day04Part2PassportProcessingValidatingFields {
 
     private static boolean hasYearRange(String value, int startYear, int endYear) {
         if (!isYear(value)) return false;
-        return Integer.parseInt(value) >= startYear && Integer.parseInt(value) <= endYear;
+        return Integer.parseInt(value) > startYear && Integer.parseInt(value) <= endYear;
     }
 
     private static boolean isYear(String value) {

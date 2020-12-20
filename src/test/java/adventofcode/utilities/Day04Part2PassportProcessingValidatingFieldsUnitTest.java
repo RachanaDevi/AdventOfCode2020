@@ -9,8 +9,8 @@ import static org.hamcrest.core.Is.is;
 public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
 
     @Test
-    public void shouldReturnFalseIfBirthYearIsLessThan1920() {
-        var invalidBirthYear = "byr:1919";
+    public void shouldReturnFalseIfBirthYearIsLessThan1921() {
+        var invalidBirthYear = "byr:1920";
         assertThat(validateField(invalidBirthYear), is(false));
     }
 
@@ -28,6 +28,12 @@ public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
 
     @Test
     public void shouldReturnTrueIfIssueYearIsBetween2010And2020() {
+        var invalidBirthYear = "iyr:2015";
+        assertThat(validateField(invalidBirthYear), is(true));
+    }
+
+    @Test
+    public void shouldReturnTrueIfExpirationYearIsBetween2020And2020() {
         var invalidBirthYear = "iyr:2015";
         assertThat(validateField(invalidBirthYear), is(true));
     }
