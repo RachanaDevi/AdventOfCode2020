@@ -10,19 +10,25 @@ public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
 
     @Test
     public void shouldReturnFalseIfBirthYearIsLessThan1920() {
-        var birthYear = "byr:1919";
-        assertThat(validateField(birthYear), is(false));
+        var invalidBirthYear = "byr:1919";
+        assertThat(validateField(invalidBirthYear), is(false));
     }
 
     @Test
     public void shouldReturnFalseIfBirthYearIsMoreThan2002() {
-        var birthYear = "byr:2003";
-        assertThat(validateField(birthYear), is(false));
+        var invalidBirthYear = "byr:2003";
+        assertThat(validateField(invalidBirthYear), is(false));
     }
 
     @Test
     public void shouldReturnTrueIfBirthYearIsBetween1920And2002() {
         var birthYear = "byr:1961";
         assertThat(validateField(birthYear), is(true));
+    }
+
+    @Test
+    public void shouldReturnTrueIfIssueYearIsBetween2010And2020() {
+        var invalidBirthYear = "iyr:2015";
+        assertThat(validateField(invalidBirthYear), is(true));
     }
 }

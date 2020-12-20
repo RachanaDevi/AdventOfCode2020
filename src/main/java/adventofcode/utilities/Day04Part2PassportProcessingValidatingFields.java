@@ -14,10 +14,19 @@ public class Day04Part2PassportProcessingValidatingFields {
     private static boolean validate(String key, String value) {
         switch (key) {
             case "byr":
-                if (value != null && value.matches("[0-9]{4}"))
-                    return Integer.parseInt(value) >= 1920 && Integer.parseInt(value) <= 2002;
-                break;
+                return hasYearRange(value, 1920, 2002);
+            case "iyr":
+                return hasYearRange(value, 2010, 2020);
         }
         return false;
+    }
+
+    private static boolean hasYearRange(String value, int startYear, int endYear) {
+        if (!isYear(value)) return false;
+        return Integer.parseInt(value) >= startYear && Integer.parseInt(value) <= endYear;
+    }
+
+    private static boolean isYear(String value) {
+        return value != null && value.matches("[0-9]{4}");
     }
 }
