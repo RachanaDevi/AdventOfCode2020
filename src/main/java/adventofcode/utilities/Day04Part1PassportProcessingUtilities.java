@@ -10,4 +10,17 @@ public class Day04Part1PassportProcessingUtilities {
         var fileReader = Files.readString(Paths.get(filePath));
         return fileReader.replace("\n", " ");
     }
+
+    static String[] removeNewLines(String[] passports) {
+        String[] newPassports = new String[passports.length];
+        int i = 0;
+        for (String passport : passports) {
+            newPassports[i++] = passport.replace("\n", "");
+        }
+        return newPassports;
+    }
+
+    public static String[] splitByTwoNewlines(String fileReader) {
+        return fileReader.split("\n\n");
+    }
 }
