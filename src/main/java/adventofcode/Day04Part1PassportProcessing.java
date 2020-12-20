@@ -2,15 +2,18 @@ package adventofcode;
 
 public class Day04Part1PassportProcessing {
 
-    public static Integer validPassportsCount(String passport) {
+    public static Integer validPassports(String[] passports) {
         var count = 0;
-        if (areValidFieldsPresent(passport)) {
-            count++;
+        for (String passport : passports) {
+            if (areValidFieldsPresent(passport)) {
+                count++;
+            }
         }
         return count;
     }
 
-    public static boolean areValidFieldsPresent(String passport) {
+
+    static boolean areValidFieldsPresent(String passport) {
         String[] passportRequiredFields = {"ecl",
                 "pid",
                 "eyr",

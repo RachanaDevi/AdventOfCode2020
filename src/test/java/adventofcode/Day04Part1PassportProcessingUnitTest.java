@@ -3,7 +3,7 @@ package adventofcode;
 import org.junit.Test;
 
 import static adventofcode.Day04Part1PassportProcessing.areValidFieldsPresent;
-import static adventofcode.Day04Part1PassportProcessing.validPassportsCount;
+import static adventofcode.Day04Part1PassportProcessing.validPassports;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
@@ -24,18 +24,18 @@ public class Day04Part1PassportProcessingUnitTest {
     @Test
     public void shouldReturnZeroValidPassport() {
         String[] invalidPassport = {"invalidPassportString"};
-        assertThat(validPassportsCount(invalidPassport[0]), is(0));
+        assertThat(validPassports(invalidPassport), is(0));
     }
 
     @Test
     public void shouldReturnOneValidPassport() {
-        String[] invalidPassport = {"ecl hgt pid eyr hcl byr iyr"};
-        assertThat(validPassportsCount(invalidPassport[0]), is(1));
+        String[] validPassport = {"ecl hgt pid eyr hcl byr iyr"};
+        assertThat(validPassports(validPassport), is(1));
     }
 
     @Test
     public void shouldReturnOneValidPassportFromAnArrayOfPassports() {
-        String[] invalidPassport = {"ecl hgt pid eyr hcl byr iyr"};
-        assertThat(validPassportsCount(invalidPassport[0]), is(1));
+        String[] passports = {"hcl byr iyr ecl hgt pid eyr ", "ecl hgt pid eyr hcl iyr"};
+        assertThat(validPassports(passports), is(1));
     }
 }
