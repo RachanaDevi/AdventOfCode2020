@@ -33,8 +33,8 @@ public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
     }
 
     @Test
-    public void shouldReturnTrueIfExpirationYearIsBetween2020And2020() {
-        var invalidBirthYear = "iyr:2015";
-        assertThat(validateField(invalidBirthYear), is(true));
+    public void shouldReturnFalseIfExpirationYearIsBetween2021And2030() {
+        var invalidBirthYear = "eyr:2020";
+        assertThat(validateField(invalidBirthYear), is(false));
     }
 }

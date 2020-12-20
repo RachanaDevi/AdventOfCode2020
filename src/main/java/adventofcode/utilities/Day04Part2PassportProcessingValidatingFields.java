@@ -17,6 +17,8 @@ public class Day04Part2PassportProcessingValidatingFields {
                 return hasYearRange(value, 1920, 2002);
             case "iyr":
                 return hasYearRange(value, 2010, 2020);
+            case "eyr":
+                return hasYearRange(value, 2020, 2030);
         }
         return false;
     }
