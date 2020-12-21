@@ -14,9 +14,9 @@ public class Day04Part2PassportProcessingValidatingFields {
     private static boolean validate(String key, String value) {
         switch (key) {
             case "byr":
-                return hasYearRange(value, 1920, 2002); //1926 1946 1992 2007(invalid)
+                return hasYearRange(value, 1920, 2002);
             case "iyr":
-                return hasYearRange(value, 2010, 2020); //2010(should be included) 2018, 2019, 2020, 2023 
+                return hasYearRange(value, 2010, 2020);
             case "eyr":
                 return hasYearRange(value, 2020, 2030);
             case "hcl":
