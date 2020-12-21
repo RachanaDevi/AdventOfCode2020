@@ -9,8 +9,8 @@ import static org.hamcrest.core.Is.is;
 public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
 
     @Test
-    public void shouldReturnFalseIfBirthYearIsLessThan1921() {
-        var invalidBirthYear = "byr:1920";
+    public void shouldReturnFalseIfBirthYearIsLessThan1920() {
+        var invalidBirthYear = "byr:1919";
         assertThat(isValidPassportField(invalidBirthYear), is(false));
     }
 
@@ -33,8 +33,8 @@ public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
     }
 
     @Test
-    public void shouldReturnFalseIfExpirationYearIsBetween2021And2030() {
-        var expirationYear = "eyr:2020";
+    public void shouldReturnFalseIfExpirationYearIsLessThan2020() {
+        var expirationYear = "eyr:2019";
         assertThat(isValidPassportField(expirationYear), is(false));
     }
 
@@ -93,8 +93,8 @@ public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
     }
 
     @Test
-    public void shouldReturnFalseGivenHeightIsLessThan60inches() {
-        var invalidHeight = "hgt:59in";
+    public void shouldReturnFalseGivenHeightIsLessThan59inches() {
+        var invalidHeight = "hgt:58in";
         assertThat(isValidPassportField(invalidHeight), is(false));
     }
 
@@ -117,8 +117,8 @@ public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
     }
 
     @Test
-    public void shouldReturnFalseGivenHeightIsLessThan151cm() {
-        var invalidHeight = "hgt:150cm";
+    public void shouldReturnFalseGivenHeightIsLessThan150cm() {
+        var invalidHeight = "hgt:149cm";
         assertThat(isValidPassportField(invalidHeight), is(false));
     }
 

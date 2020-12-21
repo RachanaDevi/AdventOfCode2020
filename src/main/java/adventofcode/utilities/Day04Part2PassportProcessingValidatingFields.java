@@ -14,9 +14,9 @@ public class Day04Part2PassportProcessingValidatingFields {
     private static boolean validate(String key, String value) {
         switch (key) {
             case "byr":
-                return hasYearRange(value, 1920, 2002);
+                return hasYearRange(value, 1920, 2002); //1926 1946 1992 2007(invalid)
             case "iyr":
-                return hasYearRange(value, 2010, 2020);
+                return hasYearRange(value, 2010, 2020); //2010(should be included) 2018, 2019, 2020, 2023 
             case "eyr":
                 return hasYearRange(value, 2020, 2030);
             case "hcl":
@@ -33,6 +33,8 @@ public class Day04Part2PassportProcessingValidatingFields {
                     case "in" -> isWithinRange(unitValue, 59, 76);
                     default -> false;
                 };
+            case "cid":
+                return true;
             default:
                 return false;
         }
@@ -44,7 +46,7 @@ public class Day04Part2PassportProcessingValidatingFields {
     }
 
     private static boolean isWithinRange(String value, int start, int end) {
-        return Integer.parseInt(value) > start && Integer.parseInt(value) <= end;
+        return Integer.parseInt(value) >= start && Integer.parseInt(value) <= end;
     }
 
     private static boolean isYear(String value) {
