@@ -19,6 +19,8 @@ public class Day04Part2PassportProcessingValidatingFields {
                 return hasYearRange(value, 2010, 2020);
             case "eyr":
                 return hasYearRange(value, 2020, 2030);
+            case "pid":
+                return value.matches("[0-9]{9}");
         }
         return false;
     }

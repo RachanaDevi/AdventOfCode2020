@@ -37,4 +37,16 @@ public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
         var expirationYear = "eyr:2020";
         assertThat(isValidPassportField(expirationYear), is(false));
     }
+
+    @Test
+    public void shouldReturnFalseForInvalidPassportID() {
+        var invalidPassportId = "pid:";
+        assertThat(isValidPassportField(invalidPassportId), is(false));
+    }
+
+    @Test
+    public void shouldReturnTrueForValidPassportID() {
+        var passportId = "pid:023456789";
+        assertThat(isValidPassportField(passportId), is(true));
+    }
 }
