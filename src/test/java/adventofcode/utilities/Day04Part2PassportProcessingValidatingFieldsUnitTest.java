@@ -71,4 +71,16 @@ public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
         var invalidHairColor = "hcl:#fffaa0";
         assertThat(isValidPassportField(invalidHairColor), is(true));
     }
+
+    @Test
+    public void shouldReturnFalseForInvalidEyeColor() {
+        var invalidEyeColor = "ecl:invalid";
+        assertThat(isValidPassportField(invalidEyeColor), is(false));
+    }
+
+    @Test
+    public void shouldReturnTrueForValidEyeColorWithSpace() {
+        var invalidEyeColor = "ecl:brn ";
+        assertThat(isValidPassportField(invalidEyeColor), is(true));
+    }
 }
