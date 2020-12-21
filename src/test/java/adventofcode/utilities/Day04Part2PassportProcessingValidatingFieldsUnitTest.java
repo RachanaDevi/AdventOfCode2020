@@ -6,10 +6,6 @@ import static adventofcode.utilities.Day04Part2PassportProcessingValidatingField
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-/*
-hcl:dab227 iyr:2012
-ecl:brn hgt:182cm pid:021572410 eyr:2020 byr:1992 cid:277
-* */
 public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
 
     @Test
@@ -82,5 +78,53 @@ public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
     public void shouldReturnTrueForValidEyeColorWithSpace() {
         var invalidEyeColor = "ecl:brn ";
         assertThat(isValidPassportField(invalidEyeColor), is(true));
+    }
+
+    @Test
+    public void shouldReturnTrueGivenHeightIsGreaterThan59inches() {
+        var validHeight = "hgt:60in";
+        assertThat(isValidPassportField(validHeight), is(true));
+    }
+
+    @Test
+    public void shouldReturnTrueGivenHeightIsLessThan77inches() {
+        var validHeight = "hgt:76in";
+        assertThat(isValidPassportField(validHeight), is(true));
+    }
+
+    @Test
+    public void shouldReturnFalseGivenHeightIsLessThan60inches() {
+        var invalidHeight = "hgt:59in";
+        assertThat(isValidPassportField(invalidHeight), is(false));
+    }
+
+    @Test
+    public void shouldReturnFalseGivenHeightIsGreaterThan76inches() {
+        var invalidHeight = "hgt:77in";
+        assertThat(isValidPassportField(invalidHeight), is(false));
+    }
+
+    @Test
+    public void shouldReturnTrueGivenHeightIsGreaterThan150cm() {
+        var validHeight = "hgt:151cm";
+        assertThat(isValidPassportField(validHeight), is(true));
+    }
+
+    @Test
+    public void shouldReturnTrueGivenHeightIsLessThan194cm() {
+        var validHeight = "hgt:193cm";
+        assertThat(isValidPassportField(validHeight), is(true));
+    }
+
+    @Test
+    public void shouldReturnFalseGivenHeightIsLessThan151cm() {
+        var invalidHeight = "hgt:150cm";
+        assertThat(isValidPassportField(invalidHeight), is(false));
+    }
+
+    @Test
+    public void shouldReturnFalseGivenHeightIsGreaterThan193cm() {
+        var invalidHeight = "hgt:194cm";
+        assertThat(isValidPassportField(invalidHeight), is(false));
     }
 }
