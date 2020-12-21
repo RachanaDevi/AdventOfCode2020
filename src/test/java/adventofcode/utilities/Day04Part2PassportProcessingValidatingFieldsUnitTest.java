@@ -6,6 +6,10 @@ import static adventofcode.utilities.Day04Part2PassportProcessingValidatingField
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
+/*
+hcl:dab227 iyr:2012
+ecl:brn hgt:182cm pid:021572410 eyr:2020 byr:1992 cid:277
+* */
 public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
 
     @Test
@@ -48,5 +52,23 @@ public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
     public void shouldReturnTrueForValidPassportID() {
         var passportId = "pid:023456789";
         assertThat(isValidPassportField(passportId), is(true));
+    }
+
+    @Test
+    public void shouldReturnFalseForInvalidHairColor() {
+        var invalidHairColor = "hcl:#fg012k";
+        assertThat(isValidPassportField(invalidHairColor), is(false));
+    }
+
+    @Test
+    public void shouldReturnFalseHavingHairColorLengthLessThan6() {
+        var invalidHairColor = "hcl:#ff012";
+        assertThat(isValidPassportField(invalidHairColor), is(false));
+    }
+
+    @Test
+    public void shouldReturnTrueHavingValidHairColor() {
+        var invalidHairColor = "hcl:#fffaa0";
+        assertThat(isValidPassportField(invalidHairColor), is(true));
     }
 }
