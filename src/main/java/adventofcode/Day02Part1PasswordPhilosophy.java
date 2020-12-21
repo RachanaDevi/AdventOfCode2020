@@ -4,24 +4,48 @@ import java.util.List;
 
 public class Day02Part1PasswordPhilosophy {
 
-    public static boolean satisfiesPassword(String rule) {
-        var inputOutputSplit = rule.split(":");
-        var range = inputOutputSplit[0].split(" ")[0].split("-");
-        var appliedAlphabet = inputOutputSplit[0].split(" ")[1].charAt(0);
-        var lowerLimit = Integer.parseInt(range[0]);
-        var upperLimit = Integer.parseInt(range[1]);
+    public static boolean satisfiesPasswordConditions(String rule) {
         var count = 0;
-        var password = inputOutputSplit[1].trim();
-        for (int i = 0; i < password.length(); i++) {
-            if (password.charAt(i) == appliedAlphabet) {
+        for (int i = 0; i < password(rule).length(); i++) {
+            if (password(rule).charAt(i) == appliedAlphabet(rule)) {
                 count++;
-                if (count > upperLimit) return false;
+                if (count > upperLimit(rule)) return false;
             }
         }
-        return count >= lowerLimit;
+        return count >= lowerLimit(rule);
+    }
+
+    private static int lowerLimit(String rule) {
+        var range = range(rule);
+        return Integer.parseInt(range[0]);
+    }
+
+    private static int upperLimit(String rule) {
+        var range = range(rule);
+        return Integer.parseInt(range[1]);
+    }
+
+    private static String[] range(String rule) {
+        return stringByIndex(rules(rule), " ", 0).split("-");
+    }
+
+    private static char appliedAlphabet(String rule) {
+        return stringByIndex(rules(rule), " ", 1).charAt(0);
+    }
+
+    private static String rules(String rule) {
+        return stringByIndex(rule, ":", 0);
+    }
+
+    private static String password(String rule) {
+        return stringByIndex(rule, ":", 1).trim();
+    }
+
+    private static String stringByIndex(String string, String delimiter, int index) {
+        return string.split(delimiter)[index];
     }
 
     public static int correctPasswords(List<String> passwordRules) {
-        return (int) passwordRules.stream().filter(Day02Part1PasswordPhilosophy::satisfiesPassword).count();
+        return (int) passwordRules.stream().filter(Day02Part1PasswordPhilosophy::satisfiesPasswordConditions).count();
     }
 }
