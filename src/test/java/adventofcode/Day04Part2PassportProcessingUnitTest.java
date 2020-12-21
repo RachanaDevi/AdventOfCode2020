@@ -32,4 +32,11 @@ public class Day04Part2PassportProcessingUnitTest {
 
         assertThat(validPassports(passports), is(4));
     }
+
+    @Test
+    public void shouldReturn153ValidPassportsFrom291PassportsInAFile() throws IOException {
+        String[] passports = getPassports("src/test/resources/day_4_passport_processing.txt");
+
+        assertThat(validPassports(passports), is(153));
+    }
 }
