@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static adventofcode.Day02Part2PasswordPhilosophy.correctPasswords;
-import static adventofcode.Day02Part2PasswordPhilosophy.satisfiesPassword;
+import static adventofcode.Day02Part2PasswordPhilosophy.satisfiesPasswordPolicy;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
@@ -19,7 +19,7 @@ public class Day02Part2PasswordPhilosophyUnitTest {
     public void shouldPassPasswordConditionGivenASingleInput() {
         var rule = "3-4 t: dtttt";
 
-        assertThat(satisfiesPassword(rule), is(false));
+        assertThat(satisfiesPasswordPolicy(rule), is(false));
     }
 
     @Test
