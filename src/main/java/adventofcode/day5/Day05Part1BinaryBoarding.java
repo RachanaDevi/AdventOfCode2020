@@ -74,7 +74,7 @@ public class Day05Part1BinaryBoarding {
                 );
     }
 
-    public int missingSeatNumber(ArrayList<String> seatNumbers) {
+    public int missingSeatId(ArrayList<String> seatNumbers) {
         var seatNumbersList = new ArrayList<>(seatIdToSeatNumberMapping(seatNumbers).keySet());
         var missingSeatNumber = 0;
         for (int i = 0; i < seatNumbersList.size() - 1; i++) {

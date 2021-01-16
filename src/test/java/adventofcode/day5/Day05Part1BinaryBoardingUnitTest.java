@@ -98,14 +98,6 @@ public class Day05Part1BinaryBoardingUnitTest {
     }
 
     @Test
-    public void shouldReturnMaxSeatNumberAs820FromListOfSeatNumbers() throws IOException {
-        var seatNumbers = new ArrayList<>(Files.readAllLines(Paths.get("src/test/resources/day_5_binary_boarding_small.txt")));
-        final var binaryBoarding = new Day05Part1BinaryBoarding();
-
-        assertThat(binaryBoarding.maxSeatNumber(seatNumbers), is(820));
-    }
-
-    @Test
     public void shouldReturnMaxSeatNumberAs880FromListOfSeatNumbers() throws IOException {
         var seatNumbers = new ArrayList<>(Files.readAllLines(Paths.get("src/test/resources/day_5_binary_boarding.txt")));
         final var binaryBoarding = new Day05Part1BinaryBoarding();
@@ -119,6 +111,6 @@ public class Day05Part1BinaryBoardingUnitTest {
                 Paths.get("src/test/resources/day_5_binary_boarding.txt")));
         final var binaryBoarding = new Day05Part1BinaryBoarding();
 
-        assertThat(binaryBoarding.missingSeatNumber(seatNumbers), is(731));
+        assertThat(binaryBoarding.missingSeatId(seatNumbers), is(731));
     }
 }
