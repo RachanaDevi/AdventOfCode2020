@@ -45,4 +45,43 @@ public class Day05Part1BinaryBoardingUnitTest {
 
         assertThat(binaryBoarding.getRowNumber(rowNumber), is(44));
     }
+
+
+    @Test
+    public void shouldGetCorrectRangeForColNumberOfOneLetter() {
+        var colNumber = "R";
+        final var binaryBoarding = new Day05Part1BinaryBoarding();
+        binaryBoarding.getColNumber(colNumber);
+
+        Assertions.assertAll(() -> assertThat(binaryBoarding.lowerLimit, is(4)),
+                () -> assertThat(binaryBoarding.upperLimit, is(7)));
+    }
+
+    @Test
+    public void shouldGetCorrectRangeForColNumberOfTwoLetters() {
+        var colNumber = "RL";
+        final var binaryBoarding = new Day05Part1BinaryBoarding();
+        binaryBoarding.getColNumber(colNumber);
+
+        Assertions.assertAll(() -> assertThat(binaryBoarding.lowerLimit, is(4)),
+                () -> assertThat(binaryBoarding.upperLimit, is(5)));
+    }
+
+    @Test
+    public void shouldGetCorrectRangeForColNumberOfThreeLetters() {
+        var colNumber = "RLR";
+        final var binaryBoarding = new Day05Part1BinaryBoarding();
+        binaryBoarding.getColNumber(colNumber);
+
+        Assertions.assertAll(() -> assertThat(binaryBoarding.lowerLimit, is(5)),
+                () -> assertThat(binaryBoarding.upperLimit, is(5)));
+    }
+
+    @Test
+    public void shouldReturn5AsColNumberGivenSeatColNumberIsThreeLetters() {
+        var colNumber = "RLR";
+        final var binaryBoarding = new Day05Part1BinaryBoarding();
+
+        assertThat(binaryBoarding.getColNumber(colNumber), is(5));
+    }
 }
