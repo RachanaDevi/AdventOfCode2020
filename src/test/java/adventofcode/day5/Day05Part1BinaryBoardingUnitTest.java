@@ -84,4 +84,11 @@ public class Day05Part1BinaryBoardingUnitTest {
 
         assertThat(binaryBoarding.colNumber(colNumber), is(5));
     }
+
+    @Test
+    public void shouldReturnCorrectSeatNumberAs357() {
+        var seatNumber = "FBFBBFFRLR";
+        final var binaryBoarding = new Day05Part1BinaryBoarding();
+        assertThat(binaryBoarding.seatNumber(seatNumber), is(357));
+    }
 }

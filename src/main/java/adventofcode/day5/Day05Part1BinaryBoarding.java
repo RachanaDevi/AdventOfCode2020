@@ -26,4 +26,10 @@ public class Day05Part1BinaryBoarding {
         this.upperLimit = upperLimit;
         return lowerLimit;
     }
+
+    public int seatNumber(String seatNumber) {
+        int rowNumber = rowNumber(seatNumber.substring(0, 7));
+        int colNumber = colNumber(seatNumber.substring(7, 10));
+        return (rowNumber * 8) + colNumber;
+    }
 }
