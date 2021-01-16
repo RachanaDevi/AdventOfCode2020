@@ -1,4 +1,4 @@
-package adventofcode;
+package adventofcode.day5;
 
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -14,8 +14,8 @@ public class Day05Part1BinaryBoardingUnitTest {
         final var binaryBoarding = new Day05Part1BinaryBoarding();
         binaryBoarding.getRowNumber(rowNumber);
 
-        Assertions.assertAll(() -> assertThat(binaryBoarding.lowerRange, is(32)),
-                () -> assertThat(binaryBoarding.upperRange, is(63)));
+        Assertions.assertAll(() -> assertThat(binaryBoarding.lowerLimit, is(32)),
+                () -> assertThat(binaryBoarding.upperLimit, is(63)));
     }
 
     @Test
@@ -24,8 +24,8 @@ public class Day05Part1BinaryBoardingUnitTest {
         final var binaryBoarding = new Day05Part1BinaryBoarding();
         binaryBoarding.getRowNumber(rowNumber);
 
-        Assertions.assertAll(() -> assertThat(binaryBoarding.lowerRange, is(32)),
-                () -> assertThat(binaryBoarding.upperRange, is(47)));
+        Assertions.assertAll(() -> assertThat(binaryBoarding.lowerLimit, is(32)),
+                () -> assertThat(binaryBoarding.upperLimit, is(47)));
     }
 
     @Test
@@ -34,8 +34,8 @@ public class Day05Part1BinaryBoardingUnitTest {
         final var binaryBoarding = new Day05Part1BinaryBoarding();
         binaryBoarding.getRowNumber(rowNumber);
 
-        Assertions.assertAll(() -> assertThat(binaryBoarding.lowerRange, is(40)),
-                () -> assertThat(binaryBoarding.upperRange, is(47)));
+        Assertions.assertAll(() -> assertThat(binaryBoarding.lowerLimit, is(40)),
+                () -> assertThat(binaryBoarding.upperLimit, is(47)));
     }
 
     @Test
