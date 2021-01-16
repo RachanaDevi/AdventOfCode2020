@@ -3,6 +3,11 @@ package adventofcode.day5;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
@@ -90,5 +95,13 @@ public class Day05Part1BinaryBoardingUnitTest {
         var seatNumber = "FBFBBFFRLR";
         final var binaryBoarding = new Day05Part1BinaryBoarding();
         assertThat(binaryBoarding.seatNumber(seatNumber), is(357));
+    }
+
+    @Test
+    public void shouldReturnMaxSeatNumberFromListOfSeatNumbers() throws IOException {
+        var seatNumbers = new ArrayList<>(Files.readAllLines(Paths.get("src/test/resources/day_5_binary_boarding_small.txt")));
+        final var binaryBoarding = new Day05Part1BinaryBoarding();
+        
+        assertThat(binaryBoarding.maxSeatNumber(seatNumbers), is(820));
     }
 }
