@@ -12,7 +12,7 @@ public class Day05Part1BinaryBoardingUnitTest {
     public void shouldGetCorrectRangeForRowNumberOfTwoLetters() {
         var rowNumber = "FB";
         final var binaryBoarding = new Day05Part1BinaryBoarding();
-        binaryBoarding.getRowNumber(rowNumber);
+        binaryBoarding.rowNumber(rowNumber);
 
         Assertions.assertAll(() -> assertThat(binaryBoarding.lowerLimit, is(32)),
                 () -> assertThat(binaryBoarding.upperLimit, is(63)));
@@ -22,7 +22,7 @@ public class Day05Part1BinaryBoardingUnitTest {
     public void shouldGetCorrectRangeForRowNumberOfThreeLetters() {
         var rowNumber = "FBF";
         final var binaryBoarding = new Day05Part1BinaryBoarding();
-        binaryBoarding.getRowNumber(rowNumber);
+        binaryBoarding.rowNumber(rowNumber);
 
         Assertions.assertAll(() -> assertThat(binaryBoarding.lowerLimit, is(32)),
                 () -> assertThat(binaryBoarding.upperLimit, is(47)));
@@ -32,7 +32,7 @@ public class Day05Part1BinaryBoardingUnitTest {
     public void shouldGetCorrectRangeForRowNumberOfFourLetters() {
         var rowNumber = "FBFB";
         final var binaryBoarding = new Day05Part1BinaryBoarding();
-        binaryBoarding.getRowNumber(rowNumber);
+        binaryBoarding.rowNumber(rowNumber);
 
         Assertions.assertAll(() -> assertThat(binaryBoarding.lowerLimit, is(40)),
                 () -> assertThat(binaryBoarding.upperLimit, is(47)));
@@ -43,7 +43,7 @@ public class Day05Part1BinaryBoardingUnitTest {
         var rowNumber = "FBFBBFF";
         final var binaryBoarding = new Day05Part1BinaryBoarding();
 
-        assertThat(binaryBoarding.getRowNumber(rowNumber), is(44));
+        assertThat(binaryBoarding.rowNumber(rowNumber), is(44));
     }
 
 
@@ -51,7 +51,7 @@ public class Day05Part1BinaryBoardingUnitTest {
     public void shouldGetCorrectRangeForColNumberOfOneLetter() {
         var colNumber = "R";
         final var binaryBoarding = new Day05Part1BinaryBoarding();
-        binaryBoarding.getColNumber(colNumber);
+        binaryBoarding.colNumber(colNumber);
 
         Assertions.assertAll(() -> assertThat(binaryBoarding.lowerLimit, is(4)),
                 () -> assertThat(binaryBoarding.upperLimit, is(7)));
@@ -61,7 +61,7 @@ public class Day05Part1BinaryBoardingUnitTest {
     public void shouldGetCorrectRangeForColNumberOfTwoLetters() {
         var colNumber = "RL";
         final var binaryBoarding = new Day05Part1BinaryBoarding();
-        binaryBoarding.getColNumber(colNumber);
+        binaryBoarding.colNumber(colNumber);
 
         Assertions.assertAll(() -> assertThat(binaryBoarding.lowerLimit, is(4)),
                 () -> assertThat(binaryBoarding.upperLimit, is(5)));
@@ -71,7 +71,7 @@ public class Day05Part1BinaryBoardingUnitTest {
     public void shouldGetCorrectRangeForColNumberOfThreeLetters() {
         var colNumber = "RLR";
         final var binaryBoarding = new Day05Part1BinaryBoarding();
-        binaryBoarding.getColNumber(colNumber);
+        binaryBoarding.colNumber(colNumber);
 
         Assertions.assertAll(() -> assertThat(binaryBoarding.lowerLimit, is(5)),
                 () -> assertThat(binaryBoarding.upperLimit, is(5)));
@@ -82,6 +82,6 @@ public class Day05Part1BinaryBoardingUnitTest {
         var colNumber = "RLR";
         final var binaryBoarding = new Day05Part1BinaryBoarding();
 
-        assertThat(binaryBoarding.getColNumber(colNumber), is(5));
+        assertThat(binaryBoarding.colNumber(colNumber), is(5));
     }
 }

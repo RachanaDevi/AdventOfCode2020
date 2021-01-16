@@ -5,19 +5,18 @@ public class Day05Part1BinaryBoarding {
     int lowerLimit;
     int upperLimit;
 
-
-    public int getRowNumber(String rowNumber) {
-        return getSeatFrom(rowNumber, 0, 127, "F");
+    public int rowNumber(String rowNumber) {
+        return getLastNumber(rowNumber, 0, 127, "F");
     }
 
-    public int getColNumber(String colNumber) {
-        return getSeatFrom(colNumber, 0, 7, "L");
+    public int colNumber(String colNumber) {
+        return getLastNumber(colNumber, 0, 7, "L");
     }
 
-    private int getSeatFrom(String seatNumber, int lowerLimit, int upperLimit, String firstHalf) {
-        var seatNumbers = seatNumber.split("");
-        for (String seatNum : seatNumbers) {
-            if (seatNum.equals(firstHalf)) {
+    private int getLastNumber(String steps, int lowerLimit, int upperLimit, String firstHalf) {
+        var stepArray = steps.split("");
+        for (String step : stepArray) {
+            if (step.equals(firstHalf)) {
                 upperLimit = (upperLimit - ((upperLimit - lowerLimit) / 2)) - 1;
             } else {
                 lowerLimit = (lowerLimit + ((upperLimit - lowerLimit) / 2)) + 1;
