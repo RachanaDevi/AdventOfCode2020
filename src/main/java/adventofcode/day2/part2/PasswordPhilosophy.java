@@ -1,11 +1,11 @@
-package adventofcode;
+package adventofcode.day2.part2;
 
 import java.util.List;
 
-public class Day02Part2PasswordPhilosophy {
+public class PasswordPhilosophy {
 
     public static int correctPasswords(List<String> passwordRules) {
-        return (int) passwordRules.stream().filter(Day02Part2PasswordPhilosophy::satisfiesPasswordPolicy).count();
+        return (int) passwordRules.stream().filter(PasswordPhilosophy::satisfiesPasswordPolicy).count();
     }
 
     public static boolean satisfiesPasswordPolicy(String passwordPolicyAndPassword) {

@@ -1,15 +1,15 @@
-package adventofcode;
+package adventofcode.day4.part2;
 
 import org.junit.Test;
 
 import java.io.IOException;
 
-import static adventofcode.Day04Part2PassportProcessing.validPassports;
-import static adventofcode.utilities.Day04Part1PassportProcessingUtilities.getPassports;
+import static adventofcode.day4.part2.PassportProcessing.validPassports;
+import static adventofcode.day4.part1.utility.PassportProcessingUtility.getPassports;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class Day04Part2PassportProcessingUnitTest {
+public class PassportProcessingUnitTest {
 
     @Test
     public void shouldReturnZeroValidPassportsGivenOneInvalidPassports() {

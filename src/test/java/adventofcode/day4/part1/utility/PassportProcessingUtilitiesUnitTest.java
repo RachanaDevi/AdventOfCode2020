@@ -1,15 +1,15 @@
-package adventofcode.utilities;
+package adventofcode.day4.part1.utility;
 
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
 import java.io.IOException;
 
-import static adventofcode.utilities.Day04Part1PassportProcessingUtilities.*;
+import static adventofcode.day4.part1.utility.PassportProcessingUtility.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class Day04Part1PassportProcessingUtilitiesUnitTest {
+public class PassportProcessingUtilitiesUnitTest {
 
     @Test
     public void shouldGetPassportsFromFileHavingOnePassportDetail() throws IOException {

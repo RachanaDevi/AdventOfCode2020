@@ -1,6 +1,6 @@
-package adventofcode;
+package adventofcode.day3.part2;
 
-public class Day03Part2TobogganTrajectory {
+public class TobogganTrajectory {
 
     static final String TREE = "#";
     static final String SQUARE = ".";

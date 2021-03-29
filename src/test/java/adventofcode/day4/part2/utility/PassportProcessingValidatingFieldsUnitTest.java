@@ -1,12 +1,12 @@
-package adventofcode.utilities;
+package adventofcode.day4.part2.utility;
 
 import org.junit.Test;
 
-import static adventofcode.utilities.Day04Part2PassportProcessingValidatingFields.isValidPassportField;
+import static adventofcode.day4.part2.utility.PassportProcessingValidatingFieldsUtility.isValidPassportField;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class Day04Part2PassportProcessingValidatingFieldsUnitTest {
+public class PassportProcessingValidatingFieldsUnitTest {
 
     @Test
     public void shouldReturnFalseIfBirthYearIsLessThan1920() {

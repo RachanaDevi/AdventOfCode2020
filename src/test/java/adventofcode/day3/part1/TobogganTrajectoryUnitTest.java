@@ -1,4 +1,4 @@
-package adventofcode;
+package adventofcode.day3.part1;
 
 
 import org.junit.Test;
@@ -8,11 +8,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-import static adventofcode.Day03Part1TobogganTrajectory.*;
+import static adventofcode.day3.part1.TobogganTrajectory.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class Day03Part1TobogganTrajectoryUnitTest {
+public class TobogganTrajectoryUnitTest {
 
     @Test
     public void shouldEncounter1TreeGivenTheTobogganPathIs2x4() {

@@ -1,10 +1,10 @@
-package adventofcode.utilities;
+package adventofcode.day4.part1.utility;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Day04Part1PassportProcessingUtilities {
+public class PassportProcessingUtility {
 
     public static String[] getPassports(String filePath) throws IOException {
         var fileReader = Files.readString(Paths.get(filePath));

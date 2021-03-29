@@ -1,6 +1,6 @@
-package adventofcode.utilities;
+package adventofcode.day4.part2.utility;
 
-public class Day04Part2PassportProcessingValidatingFields {
+public class PassportProcessingValidatingFieldsUtility {
 
     private static final String COLON_SEPARATOR = ":";
 

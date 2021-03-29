@@ -1,4 +1,4 @@
-package adventofcode;
+package adventofcode.day2.part2;
 
 import org.junit.Test;
 
@@ -8,22 +8,23 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import static adventofcode.Day02Part1PasswordPhilosophy.correctPasswords;
-import static adventofcode.Day02Part1PasswordPhilosophy.satisfiesPasswordConditions;
+import static adventofcode.day2.part2.PasswordPhilosophy.correctPasswords;
+import static adventofcode.day2.part2.PasswordPhilosophy.satisfiesPasswordPolicy;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class Day02Part1PasswordPhilosophyUnitTest {
+public class PasswordPhilosophyUnitTest {
+
     @Test
-    public void shouldPassPasswordConditionsGivenSingleInput() {
+    public void shouldPassPasswordConditionGivenASingleInput() {
         var rule = "3-4 t: dtttt";
 
-        assertThat(satisfiesPasswordConditions(rule), is(true));
+        assertThat(satisfiesPasswordPolicy(rule), is(false));
     }
 
     @Test
     public void shouldPassPasswordConditionsGivenAnArrayOfTwoPasswordRules() {
-        var passwordRules = List.of("3-4 t: dttt", "3-4 h: vhh");
+        var passwordRules = List.of("1-3 a: abcde", "1-3 b: cdefg", "2-9 c: ccccccccc");
 
         assertThat(correctPasswords(passwordRules), is(1));
     }
@@ -34,6 +35,6 @@ public class Day02Part1PasswordPhilosophyUnitTest {
                 .readAllLines(Paths
                         .get("src/test/resources/day2_password_philosophy.txt")));
 
-        assertThat(correctPasswords(passwordRules), is(586));
+        assertThat(correctPasswords(passwordRules), is(352));
     }
 }

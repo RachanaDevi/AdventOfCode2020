@@ -1,8 +1,8 @@
-package adventofcode;
+package adventofcode.day1;
 
 import java.util.List;
 
-public class Day01ReportRepair {
+public class ReportRepair {
 
     public static Integer findTwoNumbersProductWhoseSumIs2020(List<Integer> numbers) {
         for (int i = 0; i < numbers.size(); i++) {
