@@ -35,4 +35,12 @@ public class CustomCustomsUnitTest {
 
         assertThat(customCustoms.uniqueAnswerSum(fileName), is(11));
     }
+
+    @Test
+    public void shouldGetUniqueAnswersSumSolution() throws IOException {
+        var customCustoms = new CustomCustoms();
+        String fileName = "src/test/resources/day_6_part_1_custom_customs.txt";
+
+        assertThat(customCustoms.uniqueAnswerSum(fileName), is(6534));
+    }
 }
