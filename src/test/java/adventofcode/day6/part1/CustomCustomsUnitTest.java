@@ -29,10 +29,10 @@ public class CustomCustomsUnitTest {
     }
 
     @Test
-    public void shouldGetUniqueAnswers() {
+    public void shouldGetUniqueAnswersSum() throws IOException {
         var customCustoms = new CustomCustoms();
-        var groupAnswers = "abac";
+        String fileName = "src/test/resources/day_6_part_1_custom_customs_small.txt";
 
-        assertThat(customCustoms.getUniqueAnswers(groupAnswers), is(3));
+        assertThat(customCustoms.uniqueAnswerSum(fileName), is(11));
     }
 }

@@ -13,10 +13,15 @@ public class CustomCustoms {
         return FileReader.contentSeparatedByABlankLine(fileName, "");
     }
 
-    public int getUniqueAnswers(String groupAnswer) {
-        String[] answers = groupAnswer.split("");
-        Set<String> answerSet = new HashSet<>();
-        Collections.addAll(answerSet, answers);
-        return answerSet.size();
+    public int uniqueAnswerSum(String fileName) throws IOException {
+        String[] groups = groups(fileName);
+        int uniqueAnswers = 0;
+        for (String groupAnswer : groups) {
+            Set<String> answerSet = new HashSet<>();
+            String[] answers = groupAnswer.split("");
+            Collections.addAll(answerSet, answers);
+            uniqueAnswers += answerSet.size();
+        }
+        return uniqueAnswers;
     }
 }
