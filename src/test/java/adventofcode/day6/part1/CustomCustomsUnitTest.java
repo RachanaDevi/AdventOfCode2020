@@ -17,7 +17,7 @@ public class CustomCustomsUnitTest {
 
         String[] expectedGroups = {"abc", "abc", "abac", "aaaa", "b"};
 
-        assertThat(customCustoms.groups(fileName), is(expectedGroups));
+        assertThat(customCustoms.groups(fileName, ""), is(expectedGroups));
     }
 
     @Test
@@ -25,7 +25,7 @@ public class CustomCustomsUnitTest {
         var customCustoms = new CustomCustoms();
         String fileName = "src/test/resources/day_6_part_1_custom_customs_small.txt";
 
-        assertThat(customCustoms.groups(fileName).length, is(5));
+        assertThat(customCustoms.groups(fileName, "").length, is(5));
     }
 
     @Test
@@ -42,5 +42,29 @@ public class CustomCustomsUnitTest {
         String fileName = "src/test/resources/day_6_part_1_custom_customs.txt";
 
         assertThat(customCustoms.uniqueAnswerSum(fileName), is(6534));
+    }
+
+    @Test
+    public void shouldReturnAllAgreedAnswers() {
+        var customCustoms = new CustomCustoms();
+        String groupAnswers = "a ba ca";
+
+        assertThat(customCustoms.getAgreedAnswersFromGroupMembers(groupAnswers), is(1));
+    }
+
+    @Test
+    public void shouldGetSumOfAllAgreedAnswersFromAllGroups() throws IOException {
+        var customCustoms = new CustomCustoms();
+        String fileName = "src/test/resources/day_6_part_1_custom_customs_small.txt";
+
+        assertThat(customCustoms.allAgreedAnswersFromGroups(fileName), is(6));
+    }
+
+    @Test
+    public void shouldGetSumOfAllAgreedAnswersFromAllGroupsSolution() throws IOException {
+        var customCustoms = new CustomCustoms();
+        String fileName = "src/test/resources/day_6_part_1_custom_customs.txt";
+
+        assertThat(customCustoms.allAgreedAnswersFromGroups(fileName), is(3402));
     }
 }
