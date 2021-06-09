@@ -6,10 +6,10 @@ import java.nio.file.Paths;
 
 public class FileReader {
 
-    public static String[] contentSeparatedByABlankLine(String filePath) throws IOException {
+    public static String[] contentSeparatedByABlankLine(String filePath, String replacement) throws IOException {
         var fileAsString = Files.readString(Paths.get(filePath));
         var contents = splitByTwoNewlines(fileAsString);
-        return removeNewLines(contents, " ");
+        return removeNewLines(contents, replacement);
     }
 
     public static String[] removeNewLines(String[] contents, String replacement) {
